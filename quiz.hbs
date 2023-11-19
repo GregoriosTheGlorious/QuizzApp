@@ -1,0 +1,20 @@
+<div class="container mt-5">
+    <h2>{{quizTitle}}</h2>
+    <div id="questionContainer">
+      <h3>{{currentQuestion.text}}</h3>
+      {{#if (eq currentQuestion.type 'multipleChoice')}}
+        <ul>
+          {{#each currentQuestion.options}}
+            <li><button class="btn btn-primary" data-option="{{this}}">{{this}}</button></li>
+          {{/each}}
+        </ul>
+      {{/if}}
+    </div>
+    <div id="feedbackContainer"></div>
+    <div id="scoreboard">
+      <p>Questions Answered: {{answeredQuestions}}</p>
+      <p>Elapsed Time: {{elapsedTime}}</p>
+      <p>Total Score: {{totalScore}}</p>
+    </div>
+  </div>
+  
